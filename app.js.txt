@@ -1,0 +1,27 @@
+function displayImages(images) {
+    const gallery = document.getElementById('image-gallery');
+    gallery.innerHTML = '';
+
+    images.forEach(image => {
+        const img = document.createElement('img');
+        img.src = image.urls.small;
+        img.alt = image.alt_description;
+        img.setAttribute('data-mime', 'image/jpeg'); // Assuming all images are JPEGs; you may need to fetch the actual MIME type if it's available in the API response
+        img.addEventListener('click', onImageSelected);
+        gallery.appendChild(img);
+    });
+}
+
+function onImageSelected(event) {
+    const img = event.target;
+    const url = img.src;
+    const mime = img.getAttribute('data-mime');
+
+    const receiver = document.getElementById('receiver');
+
+    receiver.contentWindow.postMessage({
+        message_type: 'IMAGE_SELECTED',
+        url: url,
+        mime: mime,
+    }, '*');
+}

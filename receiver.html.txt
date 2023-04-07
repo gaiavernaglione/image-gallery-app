@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Receiver</title>
+</head>
+<body>
+    <script>
+        window.addEventListener('message', (event) => {
+            if (event.data.message_type === 'IMAGE_SELECTED') {
+                console.log('Image URL:', event.data.url);
+                console.log('Image MIME type:', event.data.mime);
+            }
+        });
+    </script>
+</body>
+</html>

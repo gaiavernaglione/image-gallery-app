@@ -1,0 +1,37 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+#search-term {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+#search-button {
+    background-color: blue;
+    color: white;
+    padding: 10px 20px;
+    font-size: 1.1em;
+    border: none;
+    cursor: pointer;
+}
+
+#image-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+#image-gallery img {
+    width: 200px;
+    height: auto;
+    margin: 10px;
+    object-fit: cover;
+}
